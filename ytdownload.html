@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Downloader</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: #333;
+        }
+
+        header {
+            background: rgba(0, 0, 0, 0.6);
+            color: white;
+            padding: 1.5rem 0;
+            text-align: center;
+            border-bottom: 3px solid #48bb78;
+        }
+
+        main {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            margin-bottom: 1rem;
+            font-size: 2rem;
+            color: #333;
+        }
+
+        label {
+            font-weight: bold;
+            color: #555;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 0.75rem;
+            margin: 1rem 0;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+            font-size: 1rem;
+        }
+
+        input[type="text"]:focus {
+            outline: none;
+            border-color: #48bb78;
+            box-shadow: 0 0 5px rgba(72, 187, 120, 0.5);
+        }
+
+        .button-group {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 1rem;
+        }
+
+        button {
+            padding: 0.75rem 2rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        button.mp4 {
+            background: #48bb78;
+            color: white;
+        }
+
+        button.mp3 {
+            background: #4299e1;
+            color: white;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+            background: rgba(255, 255, 255, 0.9);
+            border-top: 3px solid #48bb78;
+            color: #555;
+        }
+
+        footer a {
+            color: #48bb78;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .highlight {
+            color: #48bb78;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>YouTube <span class="highlight">Downloader</span></h1>
+    </header>
+    <main>
+        <form action="/download" method="POST">
+            <label for="url">YouTube Video URL:</label>
+            <input type="text" id="url" name="url" placeholder="Paste your YouTube video URL here" required>
+
+            <div class="button-group">
+                <button type="submit" class="mp4">Download MP4</button>
+                <button type="submit" class="mp3">Download MP3</button>
+            </div>
+        </form>
+    </main>
+    <footer>
+        <p>&copy; 2024 YouTube Downloader. Built with <span>&#x2764;</span>. <a href="#">Privacy Policy</a></p>
+    </footer>
+</body>
+</html>
